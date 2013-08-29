@@ -342,7 +342,7 @@ def got_packet(pktlen, data, timestamp):
     '''
     global current_time
     global screen
-	global connections
+    global connections
 
     if not data:
         return
@@ -373,7 +373,7 @@ def got_packet(pktlen, data, timestamp):
             connection.add_pkt_2_connection(packet)
         else:  # It is a new connection 
             connection = Connection(packet)
-			connections.append(connection)
+            connections.append(connection)
             get_process_by_connection(connection)
 
     refresh_processes(processes)

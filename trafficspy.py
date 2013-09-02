@@ -176,7 +176,7 @@ def update_inode_2_pid():
     build and update inode to pid mapping dict
     '''
     global inodepid
-    pids = (x for x in os.listdir('/proc') if (lambda x:all(i in string.digits for i in x))(x))
+    pids = (x for x in os.listdir('/proc') if x.isdigit())
     for pid in pids:
         path = os.path.join('/proc', pid, 'fd')
         for root, dirs, files in os.walk(path):
